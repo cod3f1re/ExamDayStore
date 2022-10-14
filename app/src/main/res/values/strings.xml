@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ExamDayStore</string>
+    <string name="hola_de_nuevo">Hola de nuevo!</string>
+    <string name="esta_es_la_prueba_tecnica">Esta es la prueba tecnica para el puesto de desarrollador de android para la empresa DayStore</string>
+    <string name="introduce_tu_correo_electronico">Introduce tu correo electronico</string>
+    <string name="recuperar_contrase_a">Recuperar contraseña</string>
+    <string name="iniciar_sesion">Iniciar sesion</string>
+</resources>
