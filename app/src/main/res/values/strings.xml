@@ -8,4 +8,11 @@
     <string name="introduce_tu_contrase_a">Introduce tu contraseña</string>
     <string name="inicia_sesion_para">Inicia sesion para acceder a todas las funcionalidades de esta aplicacion.</string>
     <string name="imagen_de_header">Imagen de header</string>
+
+
+    <string name="code_200">OK</string>
+    <string name="code_404">Error de conexión. Intenta más tarde.</string>
+    <string name="not_conection">Sin conexión a internet.</string>
+    <string name="error_unknown">Error desconocido.</string>
+
 </resources>
