@@ -3,7 +3,8 @@
 
     <!-- Dimensiones para el margen superior de los titulos y el parent -->
     <dimen name="margin_top">25dp</dimen>
-
+    <!-- Dimensiones para el margen superior de los titulos y el subtitulo -->
+    <dimen name="margin_subtitles">10dp</dimen>
     <!-- Dimensiones para el margen superior de inicio de seccion -->
     <dimen name="margin_top_header_login">60dp</dimen>
 
@@ -11,12 +12,8 @@
 
     <!--   ///////////// Formularios /////////////  -->
 
-    <!-- Dimensiones para el margen superior de cada input del formulario -->
-    <dimen name="form_margin_top">25dp</dimen>
-    <!-- Dimensiones para el margen superior de recuperar contraseña -->
-    <dimen name="recovery_password">20dp</dimen>
     <!-- Dimensiones para el margen superior del btn con el formulario-->
-    <dimen name="margin_btn">30dp</dimen>
+    <dimen name="margin_btn">40dp</dimen>
 
     <!-- Dimensiones para el margen horizontal general de los elementos de la app -->
     <dimen name="horizontal_app_margin">20dp</dimen>
