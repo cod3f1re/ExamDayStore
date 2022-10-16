@@ -14,5 +14,9 @@
     <string name="code_404">Error de conexión. Intenta más tarde.</string>
     <string name="not_conection">Sin conexión a internet.</string>
     <string name="error_unknown">Error desconocido.</string>
+    <string name="deseas_enviar_tu_ubicacion">¿Deseas enviar tu ubicacion?</string>
+    <string name="puedes_enviar_tu_ubicacion_presionando_nel_boton_de_arriba">Puedes enviar tu ubicacion presionando\nel boton de arriba</string>
+    <string name="btn_para_enviar_ubicacion">Btn para enviar ubicacion</string>
+    <string name="beatfast20_live_com">beatfast20@live.com</string>
 
 </resources>
