@@ -10,7 +10,6 @@ import com.cod3f1re.examdaystore.model.repository.login.LoginRepository
 @Suppress("UNCHECKED_CAST")
 class LoginViewModelFactory(private val repository: LoginRepository) :
     ViewModelProvider.Factory {
-
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
             LoginViewModel(repository) as T

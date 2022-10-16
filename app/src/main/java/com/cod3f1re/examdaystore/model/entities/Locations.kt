@@ -7,9 +7,10 @@ import org.jetbrains.annotations.NotNull
 
 @Entity(tableName = Locations.TABLE_NAME)
 data class Locations(
-    @ColumnInfo(name = "latitude") val latitude: String?,
-    @ColumnInfo(name = "longitude") val longitude: String?
+    @ColumnInfo(name = "latitude") var latitude: Double?,
+    @ColumnInfo(name = "longitude") var longitude: Double?
 ) {
+
     companion object {
         const val TABLE_NAME = "Locations"
     }

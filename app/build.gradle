@@ -66,8 +66,10 @@ dependencies {
 
     // ViewModel
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.0-alpha02")
+
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.0-alpha02")
+
     // Guardar estado de viewmodel
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:2.6.0-alpha02")
 
@@ -82,4 +84,5 @@ dependencies {
     implementation "androidx.room:room-ktx:2.4.3"
     kapt "androidx.room:room-compiler:2.4.3"
     androidTestImplementation "androidx.room:room-testing:2.4.3"
+
 }

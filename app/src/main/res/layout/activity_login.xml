@@ -12,39 +12,29 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_marginTop="30sp"
-            android:layout_width="0sp"
-            android:layout_height="0sp"
-            app:layout_constraintHeight_percent="0.20"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/header"
-            android:contentDescription="@string/imagen_de_header" />
 
         <TextView
             android:id="@+id/textView2"
             style="@style/TitleSection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginTop="52dp"
             android:text="@string/hola_de_nuevo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvDescripcion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"
             android:layout_marginStart="@dimen/horizontal_app_margin"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="@dimen/horizontal_app_margin"
             android:text="@string/inicia_sesion_para"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
@@ -111,25 +101,15 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tvRecoverPass"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10sp"
-            android:text="@string/recuperar_contrase_a"
-            app:layout_constraintEnd_toEndOf="@+id/ilPassword"
-            app:layout_constraintTop_toBottomOf="@+id/ilPassword" />
-
-
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_btn"
+            android:layout_marginTop="28dp"
             android:text="@string/iniciar_sesion"
             app:layout_constraintEnd_toEndOf="@+id/ilPassword"
             app:layout_constraintStart_toStartOf="@+id/ilPassword"
-            app:layout_constraintTop_toBottomOf="@+id/tvRecoverPass" />
+            app:layout_constraintTop_toBottomOf="@+id/ilPassword" />
 
         <TextView
             android:layout_width="match_parent"

@@ -1,6 +1,8 @@
 package com.cod3f1re.examdaystore.view.location
 
 import android.Manifest
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
 import android.os.Bundle
@@ -8,10 +10,12 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.room.Room
 import com.cod3f1re.examdaystore.R
 import com.cod3f1re.examdaystore.databinding.ActivityLocationBinding
-import com.google.android.gms.common.ConnectionResult
-import com.google.android.gms.common.api.GoogleApiClient
+import com.cod3f1re.examdaystore.model.entities.AppDatabase
+import com.cod3f1re.examdaystore.model.entities.Locations
+import com.cod3f1re.examdaystore.view.MainActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -23,10 +27,12 @@ import com.google.android.gms.maps.model.MarkerOptions
 
 
 class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyLocationButtonClickListener{
+    private var location: Locations?=null
     private lateinit var map: GoogleMap
     private lateinit var binding: ActivityLocationBinding
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
+    @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLocationBinding.inflate(layoutInflater)
@@ -39,6 +45,19 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
                 createMarker(location.latitude,location.longitude)
             }
         }
+        binding.btnSend.setOnClickListener {
+            if(location!=null){
+                setLocationsFromRoom(location!!)
+            }else{
+                Toast.makeText(this, "No es posible enviar tu ubicacion si rechazas los permisos", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    override fun onBackPressed() {
+        finish()
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun createMapFragment() {
@@ -60,6 +79,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
             4000,
             null
         )
+        location=Locations(lat,long)
     }
 
     private fun isPermissionsGranted() = ContextCompat.checkSelfPermission(
@@ -67,6 +87,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         Manifest.permission.ACCESS_FINE_LOCATION
     ) == PackageManager.PERMISSION_GRANTED
 
+    @SuppressLint("MissingPermission")
     private fun enableMyLocation() {
         if (!::map.isInitialized) return
         if (isPermissionsGranted()) {
@@ -86,6 +107,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
                 REQUEST_CODE_LOCATION)
         }
     }
+    @SuppressLint("MissingPermission")
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -116,4 +138,11 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         const val REQUEST_CODE_LOCATION = 0
     }
 
+    private fun setLocationsFromRoom(location:Locations){
+        val db = Room.databaseBuilder(
+            applicationContext,
+            AppDatabase::class.java, "locations"
+        ).build()
+        db.locationsDao().insert(location)
+    }
 }

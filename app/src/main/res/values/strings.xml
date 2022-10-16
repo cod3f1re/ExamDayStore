@@ -18,5 +18,10 @@
     <string name="puedes_enviar_tu_ubicacion_presionando_nel_boton_de_arriba">Puedes enviar tu ubicacion presionando\nel boton de arriba</string>
     <string name="btn_para_enviar_ubicacion">Btn para enviar ubicacion</string>
     <string name="beatfast20_live_com">beatfast20@live.com</string>
+    <string name="cerrar_sesi_n">Cerrar Sesión</string>
+    <string name="enviar_ubicacion">Enviar ubicacion</string>
+    <string name="tu_codigo_de_sesion_fue">Tu codigo de sesion fue</string>
+    <string name="has_iniciado_sesion_como">Has iniciado sesion como</string>
+    <string name="bienvenido">Bienvenido</string>
 
 </resources>

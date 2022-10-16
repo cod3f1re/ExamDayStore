@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.*
 
 @Dao
-interface ContactDao {
+interface LocationsDao {
     @Insert
     fun insert(location: Locations)
 
