@@ -3,6 +3,10 @@ package com.cod3f1re.examdaystore.utils
 import com.cod3f1re.examdaystore.R
 
 /**
+ * @author Abraham Rivera Rojas
+ * @since 15/10/2022
+ */
+/**
  * Códigos de respuesta posibles para peticiones a servicios web.
  * @param code Código de respuesta.
  * @param messageId Id en R referente al mensaje a mostrar para un código.

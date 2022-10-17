@@ -23,11 +23,16 @@ import com.cod3f1re.examdaystore.model.apientities.login.LoginDataResponse
 import com.cod3f1re.examdaystore.model.apientities.login.LoginRequest
 import com.cod3f1re.examdaystore.model.repository.login.LoginRepository
 import com.cod3f1re.examdaystore.utils.APIModule
+import com.cod3f1re.examdaystore.view.MainActivity
 import com.cod3f1re.examdaystore.view.location.LocationActivity
 import com.cod3f1re.examdaystore.viewmodel.login.LoginViewModel
 import com.cod3f1re.examdaystore.viewmodel.login.LoginViewModelFactory
 
 
+/**
+ * @author Abraham Rivera Rojas
+ * @since 15/10/2022
+ */
 class LoginActivity : AppCompatActivity() {
 
     //Contiene la vista inflada para acceder a los ID's
@@ -37,6 +42,7 @@ class LoginActivity : AppCompatActivity() {
     private val viewModel: LoginViewModel by viewModels {
         LoginViewModelFactory(LoginRepository(APIModule.getAPIService()))
     }
+
     private companion object{
         //Canal para las notificaciones
         private const val CHANNEL_ID = "channelLogin"
@@ -47,9 +53,15 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         val view = binding.root
-        setContentView(view)
-        setObservers()
-        setEvents()
+        if(getSesion()){
+            finish()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }else{
+            setContentView(view)
+            setObservers()
+            setEvents()
+        }
     }
 
     private fun setEvents(){
@@ -175,6 +187,10 @@ class LoginActivity : AppCompatActivity() {
             editor.putInt("code",login.code.toInt())
             editor.apply()
 
+
+            finish()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
     }
 
@@ -191,5 +207,14 @@ class LoginActivity : AppCompatActivity() {
             val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(notificationChannel)
         }
+    }
+    private fun getSesion(): Boolean{
+        var isSesionActive = false
+        val sharedPreference = getSharedPreferences("ExamDayStore", Context.MODE_PRIVATE)
+        val email: String? = sharedPreference.getString("email","")
+        if(email!="" || email==null){
+            isSesionActive = true
+        }
+        return isSesionActive
     }
 }

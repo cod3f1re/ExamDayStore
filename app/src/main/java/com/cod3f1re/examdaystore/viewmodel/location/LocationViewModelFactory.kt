@@ -1,8 +1,8 @@
-package com.cod3f1re.examdaystore.viewmodel.login
+package com.cod3f1re.examdaystore.viewmodel.location
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.cod3f1re.examdaystore.model.repository.login.LoginRepository
+import com.cod3f1re.examdaystore.model.repository.location.LocationRepository
 
 /**
  * @author Abraham Rivera Rojas
@@ -12,11 +12,11 @@ import com.cod3f1re.examdaystore.model.repository.login.LoginRepository
  * Permite crear un LoginViewModel pasándole un [repository] como parámetro.
  */
 @Suppress("UNCHECKED_CAST")
-class LoginViewModelFactory(private val repository: LoginRepository) :
+class LocationViewModelFactory(private val repository: LocationRepository) :
     ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
-            LoginViewModel(repository) as T
+        return if (modelClass.isAssignableFrom(LocationViewModel::class.java)) {
+            LocationViewModel(repository) as T
         } else throw IllegalArgumentException("ViewModel no encontrado")
     }
 }

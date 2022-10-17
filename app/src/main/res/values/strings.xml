@@ -15,13 +15,20 @@
     <string name="not_conection">Sin conexión a internet.</string>
     <string name="error_unknown">Error desconocido.</string>
     <string name="deseas_enviar_tu_ubicacion">¿Deseas enviar tu ubicacion?</string>
-    <string name="puedes_enviar_tu_ubicacion_presionando_nel_boton_de_arriba">Puedes enviar tu ubicacion presionando\nel boton de arriba</string>
+    <string name="puedes_enviar_tu_ubicacion_presionando_nel_boton_de_arriba">Puedes enviar tu ubicacion presionando\nel botón circular que se encuentra arriba de tu email.</string>
     <string name="btn_para_enviar_ubicacion">Btn para enviar ubicacion</string>
     <string name="beatfast20_live_com">beatfast20@live.com</string>
     <string name="cerrar_sesi_n">Cerrar Sesión</string>
     <string name="enviar_ubicacion">Enviar ubicacion</string>
-    <string name="tu_codigo_de_sesion_fue">Tu codigo de sesion fue</string>
-    <string name="has_iniciado_sesion_como">Has iniciado sesion como</string>
+    <string name="tu_codigo_de_sesion_fue">Tu código de sesión fue:</string>
+    <string name="has_iniciado_sesion_como">Has iniciado sesion como:</string>
     <string name="bienvenido">Bienvenido</string>
+    <string name="code">32432</string>
+    <string name="esta_aplicacion_monitorea">Esta aplicacion monitorea en tiempo real tu ubicación, mostrandotela en un punto especifico dentro de un mapa de Google.</string>
+    <string name="mostrar_historial">Mostrar historial de ubicaciones</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="aqui_podras_ver_el_historial">Aqui podras ver el historial de todas las ubicaciones que guardaste anteriormente, puedes presionar una ubicación para verla nuevamente en el mapa.</string>
+    <string name="ver_historial">Ver historial</string>
 
 </resources>

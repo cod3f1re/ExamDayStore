@@ -7,6 +7,10 @@ import android.os.Build
 import androidx.annotation.RequiresApi
 
 /**
+ * @author Abraham Rivera Rojas
+ * @since 15/10/2022
+ */
+/**
  * Clase que representa la aplicación Android.
  */
 class App : Application() {

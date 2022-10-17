@@ -1,6 +1,10 @@
 package com.cod3f1re.examdaystore.utils
 
 /**
+ * @author Abraham Rivera Rojas
+ * @since 15/10/2022
+ */
+/**
  * Clase que permite consumir la información de respuesta de una petición o los errores
  * asociados a esta.
  * @param data Información de la petición.

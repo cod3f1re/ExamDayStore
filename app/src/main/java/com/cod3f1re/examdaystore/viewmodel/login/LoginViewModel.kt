@@ -10,6 +10,10 @@ import com.cod3f1re.examdaystore.utils.NetworkCodes
 import com.cod3f1re.examdaystore.utils.Result
 import com.cod3f1re.examdaystore.utils.ResultConsumer
 
+/**
+ * @author Abraham Rivera Rojas
+ * @since 15/10/2022
+ */
 class LoginViewModel(private val repository: LoginRepository) : ViewModel() {
 
     private val _loginLiveData: MutableLiveData<LoginDataResponse> = MutableLiveData()

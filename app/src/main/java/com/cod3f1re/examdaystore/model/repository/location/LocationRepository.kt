@@ -1,12 +1,8 @@
-package com.cod3f1re.examdaystore.model.repository.login
+package com.cod3f1re.examdaystore.model.repository.location
 
-import com.cod3f1re.examdaystore.model.apientities.login.LoginDataResponse
-import com.cod3f1re.examdaystore.model.apientities.login.LoginRequest
-import com.cod3f1re.examdaystore.utils.APIService
-import com.cod3f1re.examdaystore.utils.App
-import com.cod3f1re.examdaystore.utils.NetworkCodes
-import com.cod3f1re.examdaystore.utils.ResultConsumer
-import com.cod3f1re.examdaystore.utils.Result
+import com.cod3f1re.examdaystore.model.apientities.location.LocationRequest
+import com.cod3f1re.examdaystore.model.apientities.location.LocationDataResponse
+import com.cod3f1re.examdaystore.utils.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,16 +11,16 @@ import retrofit2.Response
  * Repositorio de datos para obtener información de la configuracion del usuario.
  * @param apiService Listado de servicios web consumibles.
  */
-class LoginRepository(private val apiService: APIService) {
+class LocationRepository(private val apiService: APIService) {
     /**
      * Realiza una petición al servicio web encargado de obtener el codigo para realizar el login.
      * @param token Contiene el token del usuario actual.
      */
-    fun getLoginGetCode(data: LoginRequest, consumer: ResultConsumer<LoginDataResponse>) {
-        apiService.loginGetCode(data).enqueue(object : Callback<LoginDataResponse> {
+    fun setLocationCode(data: LocationRequest, consumer: ResultConsumer<LocationDataResponse>) {
+        apiService.locationGetCode(data).enqueue(object : Callback<LocationDataResponse> {
             override fun onResponse(
-                call: Call<LoginDataResponse>,
-                response: Response<LoginDataResponse>
+                call: Call<LocationDataResponse>,
+                response: Response<LocationDataResponse>
             ) {
                 val status = NetworkCodes.getStatusByCode(response.code())
                 //Se espera el codigo exacto del endpoint y un cuerpo de respuesta valido
@@ -35,7 +31,7 @@ class LoginRepository(private val apiService: APIService) {
                 }
             }
 
-            override fun onFailure(call: Call<LoginDataResponse>, t: Throwable) {
+            override fun onFailure(call: Call<LocationDataResponse>, t: Throwable) {
                 val error = if (!App.isNetworkAvailable) NetworkCodes.NO_CONNECTION
                 else NetworkCodes.NOT_FOUND
 

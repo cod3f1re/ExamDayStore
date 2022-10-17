@@ -1,8 +1,11 @@
 package com.cod3f1re.examdaystore.model.entities
 
-import androidx.lifecycle.LiveData
 import androidx.room.*
 
+/**
+ * @author Abraham Rivera Rojas
+ * @since 15/10/2022
+ */
 @Dao
 interface LocationsDao {
     @Insert
@@ -15,5 +18,5 @@ interface LocationsDao {
     fun delete(vararg location: Locations)
 
     @Query("SELECT * FROM " + Locations.TABLE_NAME)
-    fun getLocations(): LiveData<List<Locations>>
+    fun getLocations(): MutableList<Locations>
 }

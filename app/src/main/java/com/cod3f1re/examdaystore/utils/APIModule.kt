@@ -3,6 +3,10 @@ package com.cod3f1re.examdaystore.utils
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 /**
+ * @author Abraham Rivera Rojas
+ * @since 15/10/2022
+ */
+/**
  * Módulo que permite inicializar una instancia de Retrofit para realizar peticiones.
  */
 class APIModule {
