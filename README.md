@@ -47,9 +47,13 @@ Para clonar el proyecto se debe de tener instalado una version de git actual, un
 La aplicacion utiliza varias bibliotecas que aseguran un desarrollo robusto y optimizable, las cuales son:
 
 1.-Room
+
 2.-Databinding
+
 3.-Patron MVVM
+
 4.-Lifeycle
+
 5.-Material Design
 
 
