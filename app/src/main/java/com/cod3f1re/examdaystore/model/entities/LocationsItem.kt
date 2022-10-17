@@ -7,5 +7,6 @@ package com.cod3f1re.examdaystore.model.entities
 data class LocationsItem (
     var id: Int,
     var latitude:String,
-    var longitude:String
+    var longitude:String,
+    var code:Int
 )

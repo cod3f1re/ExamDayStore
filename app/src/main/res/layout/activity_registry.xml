@@ -11,14 +11,14 @@
         android:id="@+id/imageView4"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
         android:alpha="0.75"
+        android:contentDescription="@string/background"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/background"
-        android:contentDescription="@string/background" />
+        app:srcCompat="@drawable/background" />
 
     <TextView
         android:id="@+id/textView11"
@@ -39,8 +39,8 @@
         android:layout_marginStart="@dimen/horizontal_app_margin"
         android:layout_marginTop="@dimen/margin_subtitles"
         android:layout_marginEnd="@dimen/horizontal_app_margin"
-        android:textColor="@color/white"
         android:text="@string/aqui_podras_ver_el_historial"
+        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -51,11 +51,28 @@
         android:layout_height="0sp"
         android:layout_marginStart="@dimen/horizontal_app_margin"
         android:layout_marginEnd="@dimen/horizontal_app_margin"
-        android:layout_marginTop="40sp"
+        android:layout_marginTop="50sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
         tools:itemCount="8"
         tools:listitem="@layout/item_locations" />
+
+    <TextView
+        android:id="@+id/tvNotRegistry"
+        style="@style/TitleSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/horizontal_app_margin"
+        android:layout_marginEnd="@dimen/horizontal_app_margin"
+        android:text="@string/a_n_no_has_enviado_ninguna_ubicaci_n"
+        android:textAlignment="center"
+        android:visibility="gone"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

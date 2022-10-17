@@ -48,6 +48,7 @@ class LocationAdapter (
             // Se indica el nuevo texto
             binding.tvLatitude.text = location.latitude
             binding.tvLongitude.text = location.longitude
+            binding.tvCode.text = location.code.toString()
         }
 
     }

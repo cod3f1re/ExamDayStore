@@ -80,7 +80,9 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         //Damos la funcion de guardar en room la ubicacion actual y guardarlo en el endpoint al btn de enviar
         binding.btnSend.setOnClickListener {
             if(location!=null){
-                setLocationsFromRoom(location!!)
+
+                viewModel.getLocationCode(LocationRequest(location?.latitude.toString(),
+                    location?.longitude.toString(),"Abraham"))
             }else{
                 Toast.makeText(this, "No es posible enviar tu ubicacion si rechazas los permisos.", Toast.LENGTH_SHORT).show()
             }
@@ -88,6 +90,14 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         //Observador que nos permite indicar cuando ya se haya enviado la ubicacion al endpoint
         viewModel.locationLiveData.observe(this){ code->
             Toast.makeText(this, "Se ha enviado la ubicacion, con codigo: ${code.code}", Toast.LENGTH_SHORT).show()
+            val db = Room.databaseBuilder(
+                applicationContext,
+                AppDatabase::class.java, "locations"
+            ).allowMainThreadQueries().build()
+            location?.let {
+                it.code = code.code.toInt()
+                db.locationsDao().insert(it)
+            }
         }
         //Btn que nos redirije al historial de ubicaciones
         binding.btnRegistry.setOnClickListener {
@@ -143,7 +153,7 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
             4000,
             null
         )
-        location=Locations(lat,long)
+        location=Locations(lat,long,-1)
     }
 
     /**
@@ -192,6 +202,10 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
             REQUEST_CODE_LOCATION -> if(grantResults.isNotEmpty() && grantResults[0]==PackageManager.PERMISSION_GRANTED){
                 map.isMyLocationEnabled = true
                 map.setOnMyLocationButtonClickListener(this)
+
+                //Se crea el fragmento del mapa
+                createMapFragment()
+                Toast.makeText(this, "Permisos aceptados, reiniciando mapa...", Toast.LENGTH_LONG).show()
             }else{
                 Toast.makeText(this, "Para activar la localización ve a ajustes y acepta los permisos", Toast.LENGTH_SHORT).show()
             }
@@ -213,15 +227,4 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         const val REQUEST_CODE_LOCATION = 0
     }
 
-    /**
-     * Metodo que establece una nueva ubicacion en la bd de Room
-     */
-    private fun setLocationsFromRoom(location:Locations){
-        val db = Room.databaseBuilder(
-            applicationContext,
-            AppDatabase::class.java, "locations"
-        ).allowMainThreadQueries().build()
-        db.locationsDao().insert(location)
-        viewModel.getLocationCode(LocationRequest(location.latitude.toString(),location.longitude.toString(),"Abraham"))
-    }
 }

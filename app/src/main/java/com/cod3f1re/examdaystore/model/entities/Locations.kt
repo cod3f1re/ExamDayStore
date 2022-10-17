@@ -12,7 +12,8 @@ import org.jetbrains.annotations.NotNull
 @Entity(tableName = Locations.TABLE_NAME)
 data class Locations(
     @ColumnInfo(name = "latitude") var latitude: Double?,
-    @ColumnInfo(name = "longitude") var longitude: Double?
+    @ColumnInfo(name = "longitude") var longitude: Double?,
+    @ColumnInfo(name = "code") var code: Int
 ) {
 
     companion object {

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.cod3f1re.examdaystore.databinding.ActivityRegistryBinding
@@ -37,7 +38,9 @@ class RegistryActivity : AppCompatActivity() {
         getLocationsFromRoom()
     }
 
-
+    /**
+     * Se obtienen las ubicaciones de la bd de Room
+     */
     private fun getLocationsFromRoom(){
         val db = Room.databaseBuilder(
             applicationContext,
@@ -49,24 +52,33 @@ class RegistryActivity : AppCompatActivity() {
         var id=0
         for (location in locationList!!) {
             id++
-            locationAdapterList.add(LocationsItem(id,location.latitude.toString(),location.longitude.toString()))
+            locationAdapterList.add(LocationsItem(id,location.latitude.toString(),location.longitude.toString(),location.code))
         }
-        // Se establece el adaptador en vertical
-        binding.rvLocations.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL ,false)
 
-        //Se agregan las listas de datos
-        locationAdapter = LocationAdapter(locationAdapterList)
-        locationAdapter.submitList(locationAdapterList)
-        binding.rvLocations.adapter = locationAdapter
+        //Se verifica si hubo ubicaciones guardadas
+        if(id>0){
+            // Se establece el adaptador en vertical
+            binding.rvLocations.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL ,false)
 
-        //Le damos la funcion de tap a las ubicaciones
-        locationAdapter.onItemClick = { locations ->
-            Log.d("TAGGGGG", locations.id.toString())
-            val intent = Intent(this,LocationActivity::class.java)
-            intent.putExtra("latitude",locations.latitude.toDouble())
-            intent.putExtra("longitude",locations.longitude.toDouble())
-            startActivity(intent)
+            //Se agregan las listas de datos
+            locationAdapter = LocationAdapter(locationAdapterList)
+            locationAdapter.submitList(locationAdapterList)
+            binding.rvLocations.adapter = locationAdapter
+
+            //Le damos la funcion de tap a las ubicaciones
+            locationAdapter.onItemClick = { locations ->
+                Log.d("TAGGGGG", locations.id.toString())
+                val intent = Intent(this,LocationActivity::class.java)
+                intent.putExtra("latitude",locations.latitude.toDouble())
+                intent.putExtra("longitude",locations.longitude.toDouble())
+                startActivity(intent)
+            }
+        }else{
+            //Si no, se oculta el rv y se muestra el mensaje de que no hay ubicaciones guardadas
+            binding.rvLocations.visibility = View.GONE
+            binding.tvNotRegistry.visibility = View.VISIBLE
         }
+
     }
 
     override fun onResume() {
