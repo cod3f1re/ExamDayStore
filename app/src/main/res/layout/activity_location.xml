@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,10 +8,6 @@
     android:fillViewport="true"
     tools:context=".view.location.LocationActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".view.location.LocationActivity">
     <ImageView
         android:id="@+id/btnSend"
         android:layout_width="70sp"
@@ -31,7 +27,7 @@
         android:layout_height="0sp"
         android:padding="5sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.6"
+        app:layout_constraintHeight_percent="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <androidx.fragment.app.FragmentContainerView
@@ -55,6 +51,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp"
                 android:text="@string/beatfast20_live_com"
+                android:maxLines="1"
+                android:ellipsize="end"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -99,8 +97,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvSubtitle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
     <!--
 
         <androidx.fragment.app.FragmentContainerView
@@ -109,4 +105,4 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     -->
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
