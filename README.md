@@ -41,8 +41,20 @@ Para clonar el proyecto se debe de tener instalado una version de git actual, un
 
 ```
 
+<!-- Bibliotecas -->
+### :mag: Bibliotecas utilizadas :mag:
+
+La aplicacion utiliza varias bibliotecas que aseguran un desarrollo robusto y optimizable, las cuales son:
+
+1.-Room
+2.-Databinding
+3.-Patron MVVM
+4.-Lifeycle
+5.-Material Design
+
+
 <!-- Caracteristicas -->
-### :computer: Caracteristicas de la app :computer:
+### :calling: Caracteristicas de la app :calling:
 
 La aplicacion aunque no cuente con demasiados modulos, implementa varias funcionalidades que deberian de ser explicadas.
 
