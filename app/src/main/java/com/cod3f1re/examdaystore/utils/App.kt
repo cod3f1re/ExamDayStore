@@ -1,5 +1,6 @@
 package com.cod3f1re.examdaystore.utils
 
+import android.annotation.SuppressLint
 import android.app.Application
 import android.net.ConnectivityManager
 import android.net.Network
@@ -33,6 +34,7 @@ class App : Application() {
     }
 
 
+    @SuppressLint("MissingPermission")
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate() {
         super.onCreate()

@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">ExamDayStore</string>
+
     <string name="hola_de_nuevo">¡Hola de nuevo!</string>
     <string name="esta_es_la_prueba_tecnica">Esta es la prueba tecnica para el puesto de desarrollador de android para la empresa DayStore.</string>
     <string name="introduce_tu_correo_electronico">Introduce tu correo electrónico.</string>
@@ -8,8 +9,6 @@
     <string name="introduce_tu_contrase_a">Introduce tu contraseña</string>
     <string name="inicia_sesion_para">Inicia sesion para acceder a todas las funcionalidades de esta aplicacion.</string>
     <string name="imagen_de_header">Imagen de header</string>
-
-
     <string name="code_200">OK</string>
     <string name="code_404">Error de conexión. Intenta más tarde.</string>
     <string name="not_conection">Sin conexión a internet.</string>
@@ -30,5 +29,11 @@
     <string name="longitude">Longitude:</string>
     <string name="aqui_podras_ver_el_historial">Aqui podras ver el historial de todas las ubicaciones que guardaste anteriormente, puedes presionar una ubicación para verla nuevamente en el mapa.</string>
     <string name="ver_historial">Ver historial</string>
+    <string name="mostrando_ubicacion">Mostrando ubicacion guardada anteriormente</string>
+    <string name="_234_234234">234.234234</string>
+    <string name="icono_planeta">Icono planeta</string>
+    <string name="historial">Historial</string>
+    <string name="background">Background</string>
+    <string name="mi_logo">Mi logo</string>
 
 </resources>

@@ -7,7 +7,7 @@ import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.cod3f1re.examdaystore.databinding.ActivityRegistryBinding
-import com.cod3f1re.examdaystore.model.LocationAdapter
+import com.cod3f1re.examdaystore.model.adapters.LocationAdapter
 import com.cod3f1re.examdaystore.model.entities.AppDatabase
 import com.cod3f1re.examdaystore.model.entities.Locations
 import com.cod3f1re.examdaystore.model.entities.LocationsItem

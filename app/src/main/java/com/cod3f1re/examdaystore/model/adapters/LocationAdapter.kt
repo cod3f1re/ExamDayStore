@@ -1,4 +1,4 @@
-package com.cod3f1re.examdaystore.model
+package com.cod3f1re.examdaystore.model.adapters
 
 import android.view.LayoutInflater
 import android.view.View

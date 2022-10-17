@@ -7,17 +7,17 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".view.MainActivity">
+
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="0sp"
         android:layout_height="0sp"
         android:scaleType="fitXY"
-        android:alpha="0.6"
+        android:alpha="0.75"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,7 +28,7 @@
         style="@style/TitleSection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_top"
         android:text="@string/bienvenido"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,7 +113,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/horizontal_app_margin"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/margin_subtitles"
         android:textColor="@color/white"
         android:layout_marginEnd="@dimen/horizontal_app_margin"
         android:text="@string/esta_aplicacion_monitorea"

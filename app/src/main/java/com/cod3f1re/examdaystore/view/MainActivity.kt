@@ -2,16 +2,9 @@ package com.cod3f1re.examdaystore.view
 
 import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
+import androidx.appcompat.app.AppCompatActivity
 import com.cod3f1re.examdaystore.databinding.ActivityMainBinding
-import com.cod3f1re.examdaystore.model.LocationAdapter
-import com.cod3f1re.examdaystore.model.entities.AppDatabase
-import com.cod3f1re.examdaystore.model.entities.Locations
-import com.cod3f1re.examdaystore.model.entities.LocationsItem
 import com.cod3f1re.examdaystore.view.location.LocationActivity
 import com.cod3f1re.examdaystore.view.login.LoginActivity
 
@@ -40,25 +33,31 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun setEvents(){
+        //Evento para abrir la interfaz del mapa y poder enviar la ubicación
         binding.btnSend.setOnClickListener {
             finish()
             val intent = Intent(this, LocationActivity::class.java)
             startActivity(intent)
         }
+        //Evento para cerrar la sesion y mandar al login
         binding.btnLogout.setOnClickListener {
             val sharedPreference = getSharedPreferences("ExamDayStore", Context.MODE_PRIVATE)
             val editor = sharedPreference.edit()
             editor.clear()
             editor.apply()
 
-            finish()
+            //Se manda al login y se limpia el stack de activities que pueda haber
             val intent = Intent(this, LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
 
     }
 
-
+    /**
+     * Metodo que obtiene los datos guardados en shared preference, que unicamente son el codigo del endpoint
+     * y el email que introdujeron
+     */
     private fun getData(){
         var sharedPreference = getSharedPreferences("ExamDayStore", Context.MODE_PRIVATE)
         email=sharedPreference.getString("email","")

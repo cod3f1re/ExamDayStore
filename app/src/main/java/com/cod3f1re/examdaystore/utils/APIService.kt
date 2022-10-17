@@ -25,7 +25,7 @@ interface APIService {
 
     /**
      * Petición para obtener el código al enviar ubicación.
-     * @see LoginDataResponse
+     * @see LocationDataResponse
      */
     @POST("mobile/sendData/")
     fun locationGetCode(@Body stationsRequest: LocationRequest): Call<LocationDataResponse>

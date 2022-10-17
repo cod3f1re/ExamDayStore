@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--   ///////////// Layout general /////////////  -->
+
     <!-- Dimensiones para el margen superior de los titulos y el parent -->
-    <dimen name="margin_top">25dp</dimen>
+    <dimen name="margin_top">20dp</dimen>
     <!-- Dimensiones para el margen superior de los titulos y el subtitulo -->
-    <dimen name="margin_subtitles">10dp</dimen>
-    <!-- Dimensiones para el margen superior de inicio de seccion -->
-    <dimen name="margin_top_header_login">60dp</dimen>
+    <dimen name="margin_subtitles">15dp</dimen>
 
 
 
@@ -14,7 +14,6 @@
 
     <!-- Dimensiones para el margen superior del btn con el formulario-->
     <dimen name="margin_btn">40dp</dimen>
-
     <!-- Dimensiones para el margen horizontal general de los elementos de la app -->
     <dimen name="horizontal_app_margin">20dp</dimen>
 

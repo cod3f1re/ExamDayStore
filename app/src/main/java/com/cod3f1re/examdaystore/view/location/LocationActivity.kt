@@ -5,7 +5,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.Location
+import android.opengl.Visibility
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -61,6 +63,12 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         latitudeSelected=intent.getDoubleExtra("latitude",-1.0)
         longitudeSelected=intent.getDoubleExtra("longitude",-1.0)
 
+        //Se verifica si obtuvo datos desde otra activity
+        if(latitudeSelected!=-1.0 && longitudeSelected!=-1.0){
+            binding.tvTitle.text =getString(R.string.mostrando_ubicacion)
+            binding.tvSubtitle.visibility = View.GONE
+            binding.btnSend.visibility = View.GONE
+        }
         //Se crea el fragmento del mapa
         createMapFragment()
 
@@ -71,19 +79,17 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
     private fun setEvents(){
         //Damos la funcion de guardar en room la ubicacion actual y guardarlo en el endpoint al btn de enviar
         binding.btnSend.setOnClickListener {
-            if(latitudeSelected!=-1.0 && longitudeSelected!=-1.0){
-                Toast.makeText(this, "Esta ubicacion ya fue guardada anteriormente.", Toast.LENGTH_SHORT).show()
+            if(location!=null){
+                setLocationsFromRoom(location!!)
             }else{
-                if(location!=null){
-                    setLocationsFromRoom(location!!)
-                }else{
-                    Toast.makeText(this, "No es posible enviar tu ubicacion si rechazas los permisos.", Toast.LENGTH_SHORT).show()
-                }
+                Toast.makeText(this, "No es posible enviar tu ubicacion si rechazas los permisos.", Toast.LENGTH_SHORT).show()
             }
         }
+        //Observador que nos permite indicar cuando ya se haya enviado la ubicacion al endpoint
         viewModel.locationLiveData.observe(this){ code->
             Toast.makeText(this, "Se ha enviado la ubicacion, con codigo: ${code.code}", Toast.LENGTH_SHORT).show()
         }
+        //Btn que nos redirije al historial de ubicaciones
         binding.btnRegistry.setOnClickListener {
             val intent = Intent(this, RegistryActivity::class.java)
             startActivity(intent)
@@ -96,11 +102,17 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         startActivity(intent)
     }
 
+    /**
+     * Metodo que crea el fragmento y carga el mapa
+     */
     private fun createMapFragment() {
         (supportFragmentManager
             .findFragmentById(R.id.fragmentMap) as SupportMapFragment?)?.getMapAsync(this)
     }
 
+    /**
+     * Metodo que es lanzado al cargar el mapa de Google
+     */
     @SuppressLint("MissingPermission")
     override fun onMapReady(p0: GoogleMap) {
         map = p0
@@ -165,6 +177,10 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
                 REQUEST_CODE_LOCATION)
         }
     }
+
+    /**
+     * Metodo que verifica los permisos
+     */
     @SuppressLint("MissingPermission")
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -197,7 +213,9 @@ class LocationActivity : AppCompatActivity(), OnMapReadyCallback,GoogleMap.OnMyL
         const val REQUEST_CODE_LOCATION = 0
     }
 
-    //Se establece una nueva ubicacion en la bd de Room
+    /**
+     * Metodo que establece una nueva ubicacion en la bd de Room
+     */
     private fun setLocationsFromRoom(location:Locations){
         val db = Room.databaseBuilder(
             applicationContext,

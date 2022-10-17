@@ -208,6 +208,10 @@ class LoginActivity : AppCompatActivity() {
             notificationManager.createNotificationChannel(notificationChannel)
         }
     }
+    /**
+     * Metodo que verifica si ya se habia guardado un email valido en las sharedpreferences
+     * lo que podriamos tomar como una sesion activa aunque no lo sea
+     */
     private fun getSesion(): Boolean{
         var isSesionActive = false
         val sharedPreference = getSharedPreferences("ExamDayStore", Context.MODE_PRIVATE)

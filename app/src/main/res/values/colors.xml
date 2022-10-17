@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-
+    <!--   ///////////// Estilos propios /////////////  -->
     <color name="error_color">#FF6666</color>
     <color name="primary_color">#72b19c</color>
 

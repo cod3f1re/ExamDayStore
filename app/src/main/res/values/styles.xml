@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--   ///////////// Estilos propios /////////////  -->
+
+
+    <!--   Estilo de los titulos de secciones  -->
     <style name="TitleSection" >
         <item name="android:textSize">30sp</item>
         <item name="android:textStyle">bold</item>
     </style>
-
 
     <style name="CardViewMaps" parent="@style/Widget.MaterialComponents.CardView">
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
