@@ -1,11 +1,8 @@
 # ExamDayStore
 
-<div align="center"> 
-  <img src="https://iili.io/tBxv9f.jpg" alt="screenshot" />
-</div>
 
 <!-- Pre requisitos -->
-### :bangbang: Prerequisites :bangbang:
+### :bangbang: Pre requisitos :bangbang:
 
 Este proyecto fue creado con la version de Android Studio Dolphin | 2021.3.1.
 
@@ -19,7 +16,7 @@ Tambien se debe de tener instalado Git, para su instalacion visite el siguiente 
 
 
 <!-- Instalación -->
-### :gear: Instalación
+### :key: Instalación :key:
 
 El proyecto de debe de abrir como cualquier otro, con la excepcion de agregar la ApiKey de Google Maps en el proyecto.
 La Api Key nunca debe de ser incluida en los archivos del proyecto por que puede ser utilizada por terceros para fines diferentes a los nuestros, por lo que es mejor
@@ -33,7 +30,8 @@ El archivo donde debemos de agregar la Api Key es el local.properties y se debe 
 
 ```
 
-Clonar el proyecto.
+<!-- Clonacion -->
+### :computer: Clonar el proyecto :computer:
 
 Para clonar el proyecto se debe de tener instalado una version de git actual, una vez instalada, se ejecuta el siguiente comando en su terminal para generar una copia del proyecto.
 
@@ -44,7 +42,7 @@ Para clonar el proyecto se debe de tener instalado una version de git actual, un
 ```
 
 <!-- Arquitectura -->
-### :camera: Arquitectura utilizada en el proyecto
+### :triangular_ruler: Arquitectura utilizada en el proyecto :triangular_ruler:
 
 Se utilizo un patrón MVVM para tener una arquitectura mas limpia y modular, haciendo posible modificar funciones cruciales en el proyecto, sin afectar otros modulos de la aplicación, con un modulo extra llamado utils, que nos provee de clases adicionales para funciones especificas que facilitan el desarrollo del proyecto.
 
@@ -54,3 +52,17 @@ Se utilizo un patrón MVVM para tener una arquitectura mas limpia y modular, hac
 
 
 
+<!-- Screenshots -->
+### :triangular_ruler: Screenshots :triangular_ruler:
+
+
+<div align="center"> 
+  <img src="https://iili.io/txQiMl.jpg" alt="screenshot" height="400" />
+  <img src="https://iili.io/txZJMQ.jpg" alt="screenshot" height="400" />
+  <img src="https://iili.io/txZRSt.jpg" alt="screenshot" height="400" />
+  <img src="https://iili.io/txZwOu.jpg" alt="screenshot" height="400" />
+</div>
+<div align="center"> 
+  <img src="https://iili.io/txZ4J1.jpg" alt="screenshot" height="400" />
+  <img src="https://iili.io/txbcDg.jpg" alt="screenshot" height="400" />
+</div>
