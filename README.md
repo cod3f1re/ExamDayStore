@@ -60,19 +60,31 @@ La aplicacion utiliza varias bibliotecas que aseguran un desarrollo robusto y op
 <!-- Caracteristicas -->
 ### :calling: Caracteristicas de la app :calling:
 
-La aplicacion aunque no cuente con demasiados modulos, implementa varias funcionalidades que deberian de ser explicadas.
+La aplicación aunque no cuente con demasiados modulos, implementa varias funcionalidades que deberían de ser explicadas. 
 
-1.-El login valida el formulario de inicio de sesion, colocando simbolos de error y una dedscripcion exacta del por que no se pudo iniciar sesion, una vez validados los campos si todo salio correctamente, manda 3 campos (email, pass y name que es mi nombre) al endpoint solicitado, retornando un codigo que posteriormente sera ocupado y guardado en las SharedPreferences
+  
 
-2.-Una vez pulsado el boton de iniciar sesion, si se recibe exactamente el codigo 201 como respuesta, se tomara como valido el "login", mostrando asi una notificacion en el celular, donde se incluye el codigo que recibe como respuesta del endpoint, en donde si pulsamos la notificacion, nos redirige a una parte de la aplicacion donde podemos enviar nuestra ubicacion al endpoint, y si no pulsamos la notificacion, la aplicacion nos redigire automaticamente al menu principal.
+1.-El login valida el formulario de inicio de sesión, colocando símbolos de error y una descripción exacta del por qué no se pudo iniciar sesión, una vez validados los campos si todo salio correctamente, manda 3 campos (email, pass y name que es mi nombre) al endpoint solicitado, retornando un código que posteriormente sera ocupado y guardado en las SharedPreferences 
 
-3.-El menu principal verifica que haya una sesion previamente iniciada, si es asi, muestra el correo con el que iniciaron sesion y muestra el codigo que obtuvo del endpoint por si se requiere verificarlo nuevamente, y lo IMPORTANTE es que una vez iniciada la sesion la aplicacion puede cerrarse y al abrirla nuevamente redirige al menu, esto es por que lee los datos de los sharedpreferences, que son eliminados hasta que presiona el boton de cerrar sesion.
+  
 
-4.-Si se pulsa el boton de enviar ubicacion desde el menu principal la aplicacion nos va a redirigir a una nueva ventana en donde vamos a poder ver un mapa de Google Maps , incluyendo nuevamente el correo electronico que indicamos, y un boton verde en el que si pulsamos, vamos a poder enviar las coordenadas al endpoint y una vez recibido una respuesta, se va a guardar localmente la latitu y la longitud en una bd local con Room.
+2.-Una vez pulsado el boton de iniciar sesión, si se recibe exactamente el codigo 201 como respuesta, se tomará como valido el "login", mostrando asi una notificación en el celular, donde se incluye el código que recibe como respuesta del endpoint, en donde si pulsamos la notificación, nos redirige a una parte de la aplicación donde podemos enviar nuestra ubicación al endpoint, y si no pulsamos la notificación, la aplicación nos redirige automáticamente al menú principal. 
 
-5.-Si se presiona el boton de Ver historial desde la interfaz de enviar ubicacion, se mostrara una nueva pantalla donde podemos ver el registro completo de las coordenadas enviadas al endpoint dentro de un recyclerview que lee los datos desde la bd con Room.
+  
 
-6.-Si se presiona algun item de localizacion se abrira nuevamente el mapa, y pondra automaticamente ul marcador que indica la ubicacion que se guardo en la bd y que fue presionada anteriormente.
+3.-El menú principal verifica que haya una sesion previamente iniciada, si es asi, muestra el correo con el que iniciaron sesión y muestra el código que obtuvo del endpoint por si se requiere verificarlo nuevamente, y lo IMPORTANTE es que una vez iniciada la sesión la aplicación puede cerrarse y al abrirla nuevamente redirige al menu, esto es por que lee los datos de los sharedpreferences, que son eliminados hasta que presiona el boton de cerrar sesion. 
+
+  
+
+4.-Si se pulsa el botón de enviar ubicación desde el menu principal la aplicación nos va a redirigir a una nueva ventana en donde vamos a poder ver un mapa de Google Maps , incluyendo nuevamente el correo electronico que indicamos, y un botón verde en el que, si pulsamos, vamos a poder enviar las coordenadas al endpoint y una vez recibido una respuesta, se va a guardar localmente la latitu y la longitud en una bd local con Room. 
+
+  
+
+5.-Si se presiona el botón de Ver historial desde la interfaz de enviar ubicación, se mostrará una nueva pantalla donde podemos ver el registro completo de las coordenadas enviadas al endpoint junto con el código que se obtuvo dentro de un recyclerview que lee los datos desde la bd con Room. 
+
+  
+
+6.-Si se presiona algún item de localización se abrira nuevamente el mapa, y pondra automáticamente el marcador que indica la ubicación que se guardó en la bd y que fue presionada anteriormente. 
 
 <!-- Arquitectura -->
 ### :triangular_ruler: Arquitectura utilizada en el proyecto :triangular_ruler:
@@ -96,6 +108,6 @@ Se utilizo un patrón MVVM para tener una arquitectura mas limpia y modular, hac
 </div>
 <div align="left"> 
   <img src="https://iili.io/txZwOu.jpg" alt="screenshot" height="400" />
-  <img src="https://iili.io/txZ4J1.jpg" alt="screenshot" height="400" />
+  <img src="https://iili.io/tz6I1t.jpg" alt="screenshot" height="400" />
   <img src="https://iili.io/txbcDg.jpg" alt="screenshot" height="400" />
 </div>
