@@ -1,8 +1,11 @@
 # ExamDayStore
 
+<div align="center"> 
+  <img src="https://iili.io/tBxv9f.jpg" alt="screenshot" />
+</div>
 
-<!-- Prerequisites -->
-### :bangbang: Prerequisites
+<!-- Pre requisitos -->
+### :bangbang: Prerequisites :bangbang:
 
 Este proyecto fue creado con la version de Android Studio Dolphin | 2021.3.1.
 
@@ -15,7 +18,7 @@ Tambien se debe de tener instalado Git, para su instalacion visite el siguiente 
 [Descargar Git](https://git-scm.com/downloads)
 
 
-<!-- Installation -->
+<!-- Instalación -->
 ### :gear: Instalación
 
 El proyecto de debe de abrir como cualquier otro, con la excepcion de agregar la ApiKey de Google Maps en el proyecto.
@@ -37,6 +40,17 @@ Para clonar el proyecto se debe de tener instalado una version de git actual, un
 ```bash
 
   git clone https://github.com/cod3f1re/ExamDayStore.git
-  
+
 ```
+
+<!-- Arquitectura -->
+### :camera: Arquitectura utilizada en el proyecto
+
+Se utilizo un patrón MVVM para tener una arquitectura mas limpia y modular, haciendo posible modificar funciones cruciales en el proyecto, sin afectar otros modulos de la aplicación, con un modulo extra llamado utils, que nos provee de clases adicionales para funciones especificas que facilitan el desarrollo del proyecto.
+
+<div align="left"> 
+  <img src="https://iili.io/tBngR4.png" alt="screenshot" />
+</div>
+
+
 
